@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vinay's Data Analytics Projects - Machine Learning, Python, and Data Science Projects">
+    <title>Projects | Vinay - Data Analyst</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    
+    <style>
+        .projects-filter {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-sm);
+            flex-wrap: wrap;
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .filter-btn {
+            padding: 0.5rem 1.25rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-full);
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: var(--transition-normal);
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: var(--bg-primary);
+        }
+        
+        .project-card-large {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            transition: var(--transition-slow);
+        }
+        
+        .project-card-large:hover {
+            border-color: var(--border-hover);
+            box-shadow: var(--shadow-xl);
+            transform: translateY(-5px);
+        }
+        
+        .project-card-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-xl);
+            padding: var(--spacing-xl);
+            align-items: center;
+        }
+        
+        .project-card-large:nth-child(even) .project-card-content {
+            direction: rtl;
+        }
+        
+        .project-card-large:nth-child(even) .project-card-content > * {
+            direction: ltr;
+        }
+        
+        .project-image-container {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            background: var(--gradient-dark);
+            aspect-ratio: 16/10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .project-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .project-placeholder-icon {
+            font-size: 4rem;
+            opacity: 0.5;
+        }
+        
+        .project-details h3 {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .project-details .project-type {
+            display: inline-block;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .project-details p {
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-md);
+            line-height: 1.7;
+        }
+        
+        .project-features {
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .project-features h4 {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: var(--spacing-sm);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        
+        .feature-list {
+            display: grid;
+            gap: var(--spacing-xs);
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+        
+        .feature-item span:first-child {
+            color: var(--accent);
+        }
+        
+        .project-links {
+            display: flex;
+            gap: var(--spacing-sm);
+            flex-wrap: wrap;
+        }
+        
+        @media (max-width: 968px) {
+            .project-card-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .project-card-large:nth-child(even) .project-card-content {
+                direction: ltr;
+            }
+            
+            .project-image-container {
+                order: -1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">VINAY</a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="experience.html" class="nav-link">Experience</a></li>
+                <li><a href="projects.html" class="nav-link active">Projects</a></li>
+                <li><a href="dashboards.html" class="nav-link">Dashboards</a></li>
+                <li><a href="skills.html" class="nav-link">Skills</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="page-hero-bg"></div>
+        <div class="container">
+            <div class="page-hero-content">
+                <span class="badge fade-in">Portfolio</span>
+                <h1 class="fade-in stagger-1">Projects</h1>
+                <p class="fade-in stagger-2" style="max-width: 600px; color: var(--text-secondary); margin-top: var(--spacing-md);">
+                    A collection of data analytics, machine learning, and software development projects.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section">
+        <div class="container">
+            <!-- Filter Buttons -->
+            <div class="projects-filter fade-in">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="ml">Machine Learning</button>
+                <button class="filter-btn" data-filter="data">Data Analytics</button>
+                <button class="filter-btn" data-filter="web">Full Stack</button>
+            </div>
+            <!-- Projects Grid -->
+
+            <!-- Project 1: Crop Yield Prediction -->
+            <div class="project-card-large fade-in mb-lg" data-category="ml data">
+                <div class="project-card-content">
+                    <div class="project-image-container" style="background: linear-gradient(135deg, #1a3a2e 0%, #0d1f18 100%);">
+                        <!-- TODO: Add project screenshot -->
+                        <span class="project-placeholder-icon">🌾</span>
+                    </div>
+                    <div class="project-details">
+                        <span class="project-type">Machine Learning / Data Analytics</span>
+                        <h3>Crop Yield Prediction</h3>
+                        <p>
+                            Machine learning model to predict agricultural crop yields based on weather patterns, 
+                            soil conditions, and historical data. Helps farmers make data-driven decisions for 
+                            better agricultural planning.
+                        </p>
+                        
+                        <div class="project-features">
+                            <h4>Key Features</h4>
+                            <div class="feature-list">
+                                <div class="feature-item"><span>→</span> Multiple regression models comparison</div>
+                                <div class="feature-item"><span>→</span> Weather data integration</div>
+                                <div class="feature-item"><span>→</span> Feature importance analysis</div>
+                                <div class="feature-item"><span>→</span> Visualization dashboard</div>
+                            </div>
+                        </div>
+                        
+                        <div class="tag-group mb-md">
+                            <span class="tag tag-accent">Python</span>
+                            <span class="tag tag-accent">Pandas</span>
+                            <span class="tag tag-accent">Scikit-learn</span>
+                            <span class="tag tag-accent">Matplotlib</span>
+                        </div>
+                        
+                        <div class="project-links">
+                            <!-- TODO: Add your actual GitHub link -->
+                            <a href="https://github.com/Vinay9015/Crop-Yield-Prediction-System" class="btn btn-primary btn-sm" target="_blank">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                GitHub-Code
+                            </a>
+                            <a href="dashboards.html" class="btn btn-secondary btn-sm">View Dashboard</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2: LinkedIn Data Pipeline -->
+            <div class="project-card-large fade-in mb-lg" data-category="data">
+                <div class="project-card-content">
+                    <div class="project-image-container" style="background: linear-gradient(135deg, #2d1b4e 0%, #1a0a2e 100%);">
+                        <!-- TODO: Add project screenshot -->
+                        <span class="project-placeholder-icon">🔗</span>
+                    </div>
+                    <div class="project-details">
+                        <span class="project-type">Data Engineering / Cloud</span>
+                        <h3>LinkedIn Data Pipeline</h3>
+                        <p>
+                            End-to-end data pipeline built with Azure Data Lakehouse architecture for processing 
+                            and analyzing LinkedIn data. Implements ETL workflows for data extraction, transformation, 
+                            and loading into a data warehouse.
+                        </p>
+                        
+                        <div class="project-features">
+                            <h4>Key Features</h4>
+                            <div class="feature-list">
+                                <div class="feature-item"><span>→</span> Azure Data Lakehouse architecture</div>
+                                <div class="feature-item"><span>→</span> Automated ETL pipelines</div>
+                                <div class="feature-item"><span>→</span> Power BI visualization</div>
+                                <div class="feature-item"><span>→</span> Data quality monitoring</div>
+                            </div>
+                        </div>
+                        
+                        <div class="tag-group mb-md">
+                            <span class="tag tag-accent">Azure</span>
+                            <span class="tag tag-accent">Data Factory</span>
+                            <span class="tag tag-accent">Pentaho-ETL</span>
+                            <span class="tag tag-accent">Power BI</span>
+                            <span class="tag tag-accent">SQL</span>
+                        </div>
+                        
+                        <div class="project-links">
+                            <!-- TODO: Add your actual GitHub link -->
+                            <a href="https://github.com/Vinay9015/LinkedIn-Data-Pipeline-And-Analytics-Platform" class="btn btn-primary btn-sm" target="_blank">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                GitHub-Code
+                            </a>
+                            <a href="dashboards.html" class="btn btn-secondary btn-sm">View Dashboard</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3: Student Survey System -->
+            <div class="project-card-large fade-in mb-lg" data-category="data">
+                <div class="project-card-content">
+                    <div class="project-image-container" style="background: linear-gradient(135deg, #3d2a1a 0%, #1f150d 100%);">
+                        <!-- TODO: Add project screenshot -->
+                        <span class="project-placeholder-icon">📋</span>
+                    </div>
+                    <div class="project-details">
+                        <span class="project-type">Big Data / Analytics</span>
+                        <h3>Student Survey Analysis System</h3>
+                        <p>
+                            Big data analytics system built using Apache Spark for processing and analyzing 
+                            large-scale student survey data. Provides insights into student satisfaction, 
+                            learning outcomes, and institutional performance.
+                        </p>
+                        
+                        <div class="project-features">
+                            <h4>Key Features</h4>
+                            <div class="feature-list">
+                                <div class="feature-item"><span>→</span> Apache Spark data processing</div>
+                                <div class="feature-item"><span>→</span> Statistical analysis</div>
+                                <div class="feature-item"><span>→</span> Sentiment analysis</div>
+                                <div class="feature-item"><span>→</span> Interactive visualizations</div>
+                            </div>
+                        </div>
+                        
+                        <div class="tag-group mb-md">
+                            <span class="tag tag-accent">Apache Spark</span>
+                            <span class="tag tag-accent">Python</span>
+                            <span class="tag tag-accent">PySpark</span>
+                            <span class="tag tag-accent">SQL</span>
+                        </div>
+                        
+                        <div class="project-links">
+                            <!-- TODO: Add your actual GitHub link -->
+                            <a href="https://github.com/Vinay9015/Survey" class="btn btn-primary btn-sm" target="_blank">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                GitHub-survey
+                            </a>
+                            <a href="https://doi.org/10.1145/3769694.3771123" class="btn btn-secondary btn-sm" target="_blank">View Published Paper</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 4: Personal Finance Tracker -->
+            <div class="project-card-large fade-in mb-lg" data-category="web data">
+                <div class="project-card-content">
+                    <div class="project-image-container" style="background: linear-gradient(135deg, #134E5E 0%, #71B280 100%);">
+                        <span class="project-placeholder-icon">💰</span>
+                    </div>
+                    <div class="project-details">
+                        <span class="project-type">Full Stack / Big Data</span>
+                        <h3>Personal Finance Tracker</h3>
+                        <p>
+                            A modern financial management system featuring a Flask web interface and an Apache Spark backend. 
+                            <strong>Developed using Claude Code</strong>, this project serves as a technical exploration of GenAI-driven 
+                            development, demonstrating how AI agents can generate production-ready code and integrate seamlessly with GitHub workflows.
+                        </p>
+            
+                        <div class="project-features">
+                            <h4>Key Features</h4>
+                            <div class="feature-list">
+                                <div class="feature-item"><span>→</span> Apache Spark backend processing</div>
+                                <div class="feature-item"><span>→</span> Real-time interactive dashboard</div>
+                                <div class="feature-item"><span>→</span> Smart transaction categorization</div>
+                            </div>
+                        </div>
+            
+                        <div class="tag-group mb-md">
+                            <span class="tag tag-accent">Flask</span>
+                            <span class="tag tag-accent">Apache Spark</span>
+                            <span class="tag tag-accent">Python</span>
+                        </div>
+            
+                        <div class="project-links">
+                            <a href="https://github.com/Vinay9015/Personal-Finance-Tracker-" class="btn btn-primary btn-sm" target="_blank">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                GitHub-Finance
+                            </a>
+                            <a href="https://github.com/Vinay9015/Personal-Finance-Tracker-/blob/main/README.md" class="btn btn-secondary btn-sm" target="_blank">View Documentation</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 5: ChurnGuard -->
+            <div class="project-card-large fade-in mb-lg" data-category="data">
+                <div class="project-card-content">
+                    <div class="project-image-container" style="background: linear-gradient(135deg, #1e3a5f 0%, #0d1b2a 100%);">
+                        <!-- TODO: Add project screenshot -->
+                        <!-- <img src="../assets/images/churnguard.png" alt="ChurnGuard Project"> -->
+                        <span class="project-placeholder-icon">🔮</span>
+                    </div>
+                    <div class="project-details">
+                        <span class="project-type">Data Analysis</span>
+                        <h3>Churn Analysis In Progress</h3>
+                        <p>
+                            I am currently developing ChurnGuard, a predictive analytics project hosted on Databricks. 
+                            The goal is to build a full-lifecycle machine learning solution—starting with rigorous data 
+                            cleaning and validation using Python and SQL, and culminating in a churn prediction model. 
+                            The final insights will be delivered through an interactive Tableau/Power BI dashboard to help businesses reduce customer attrition.
+                        
+                        </p>
+                        
+                        <div class="project-features">
+                            <h4>Key Features</h4>
+                            <div class="feature-list">
+                                <div class="feature-item"><span>→</span> Engineering a robust data pipeline on Databricks; utilizing 
+                                    SQL for data extraction and Python for extensive data cleaning, validation, and exploratory data analysis (EDA).</div>
+                                <div class="feature-item"><span>→</span> Interactive dashboard</div>
+                                <div class="feature-item"><span>→</span> Predictive Modeling</div>
+                                <div class="feature-item"><span>→</span> Customer segmentation analysis</div>
+                            </div>
+                        </div>
+                        
+                        <div class="tag-group mb-md">
+                            <span class="tag tag-accent">Python</span>
+                            <span class="tag tag-accent">Databricks</span>
+                            <span class="tag tag-accent">Tableau</span>
+                            <span class="tag tag-accent">MySQL</span>
+                            <span class="tag tag-accent">statistics</span>
+                        </div>
+                        
+                        <div class="project-links">
+                            <!-- TODO: Add your actual GitHub link -->
+                            <a href="#" class="btn btn-primary btn-sm" target="_blank">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                In Progress
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TODO: Add more projects as needed -->
+            <!--
+            <div class="project-card-large fade-in mb-lg" data-category="category">
+                ...
+            </div>
+            -->
+        </div>
+    </section>
+
+    <!-- Related Sections -->
+    <section class="section bg-secondary">
+        <div class="container text-center">
+            <span class="section-tag fade-in">More Work</span>
+            <h2 class="section-title fade-in">Explore More</h2>
+            <div class="flex flex-center gap-md flex-wrap mt-lg fade-in">
+                <a href="dashboards.html" class="btn btn-primary">View Dashboards</a>
+                <a href="publications.html" class="btn btn-secondary">Research Papers</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="https://github.com/Vinay9015" class="footer-link" target="_blank" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/kambhampati-vinay/" class="footer-link" target="_blank" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                    <a href="mailto:vinaykambhampati07@gmail.com" class="footer-link" aria-label="Email">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </a>
+                </div>
+                <p class="footer-text">© <span class="current-year">2025</span> Vinay. Built with passion for data.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        // Project filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const projects = document.querySelectorAll('.project-card-large');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Update active button
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const filter = this.dataset.filter;
+                    
+                    projects.forEach(project => {
+                        const categories = project.dataset.category || '';
+                        
+                        if (filter === 'all' || categories.includes(filter)) {
+                            project.style.display = 'block';
+                            setTimeout(() => project.classList.add('visible'), 10);
+                        } else {
+                            project.style.display = 'none';
+                            project.classList.remove('visible');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

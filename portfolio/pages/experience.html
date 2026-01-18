@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vinay's Professional Experience - Senior Quality Engineer at LTIMindtree">
+    <title>Experience | Vinay - Data Analyst</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    
+    <style>
+        .experience-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-xl);
+            margin-bottom: var(--spacing-lg);
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition-normal);
+        }
+        
+        .experience-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background: var(--gradient-accent);
+        }
+        
+        .experience-card:hover {
+            border-color: var(--border-hover);
+            box-shadow: var(--shadow-lg);
+            transform: translateX(5px);
+        }
+        
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: var(--spacing-md);
+            flex-wrap: wrap;
+            gap: var(--spacing-md);
+        }
+        
+        .experience-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .experience-company {
+            color: var(--accent);
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .experience-location {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+        
+        .experience-date {
+            background: var(--bg-secondary);
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-full);
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            white-space: nowrap;
+        }
+        
+        .experience-summary {
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-md);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        
+        .experience-achievements {
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .experience-achievements h4 {
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-sm);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        
+        .achievement-list {
+            display: grid;
+            gap: var(--spacing-sm);
+        }
+        
+        .achievement-item {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-sm);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        .achievement-icon {
+            color: var(--accent);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        
+        .experience-metrics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-md);
+            padding-top: var(--spacing-md);
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .metric-item {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            background: var(--accent-subtle);
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-sm);
+        }
+        
+        .metric-value {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        
+        .metric-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+        
+        .experience-tech {
+            margin-top: var(--spacing-md);
+        }
+        
+        .experience-tech h4 {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        @media (max-width: 768px) {
+            .experience-header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">VINAY</a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="experience.html" class="nav-link active">Experience</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="dashboards.html" class="nav-link">Dashboards</a></li>
+                <li><a href="skills.html" class="nav-link">Skills</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="page-hero-bg"></div>
+        <div class="container">
+            <div class="page-hero-content">
+                <span class="badge fade-in">Career Journey</span>
+                <h1 class="fade-in stagger-1">Professional Experience</h1>
+                <p class="fade-in stagger-2" style="max-width: 600px; color: var(--text-secondary); margin-top: var(--spacing-md);">
+                    2+ years of experience delivering data-driven solutions that drive business outcomes.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Experience -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-tag">Work History</span>
+                <h2 class="section-title">Professional Roles</h2>
+            </div>
+
+            <!-- LTIMindtree -->
+            <div class="experience-card fade-in">
+                <div class="experience-header">
+                    <div>
+                        <h3 class="experience-title">Data Analyst</h3>
+                        <p class="experience-company">LTIMindtree</p>
+                        <p class="experience-location">📍 India</p>
+                    </div>
+                    <!-- TODO: Update dates if needed -->
+                    <span class="experience-date">Jul 2022 - Aug 2023</span>
+                </div>
+                
+                <p class="experience-summary">
+                    <!-- TODO: Customize your role summary -->
+                    Led quality analytics initiatives for enterprise clients, building comprehensive dashboards 
+                    and implementing data-driven quality improvements across product lines. Combined engineering 
+                    expertise with data analytics to deliver measurable business impact.
+                </p>
+                
+                <div class="experience-achievements">
+                    <h4>Key Achievements</h4>
+                    <div class="achievement-list">
+                        <!-- TODO: Update with your specific achievements -->
+                        <div class="achievement-item">
+                            <span class="achievement-icon">✓</span>
+                            <span>Built 15+ interactive dashboards using Tableau and Power BI for real-time defect tracking and quality metrics visualization</span>
+                        </div>
+                        <div class="achievement-item">
+                            <span class="achievement-icon">✓</span>
+                            <span>Achieved $200K in cost savings through data-driven process optimization and predictive quality analytics</span>
+                        </div>
+                        <div class="achievement-item">
+                            <span class="achievement-icon">✓</span>
+                            <span>Reduced production defects by 35% by implementing automated quality monitoring systems</span>
+                        </div>
+                        <div class="achievement-item">
+                            <span class="achievement-icon">✓</span>
+                            <span>Developed Python scripts for automated data extraction, transformation, and reporting</span>
+                        </div>
+                        <div class="achievement-item">
+                            <span class="achievement-icon">✓</span>
+                            <span>Collaborated with cross-functional teams to translate business requirements into analytical solutions</span>
+                        </div>
+                        <div class="achievement-item">
+                            <span class="achievement-icon">✓</span>
+                            <span>Created comprehensive documentation and trained team members on dashboard usage and data interpretation</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="experience-metrics">
+                    <div class="metric-item">
+                        <span class="metric-value">15+</span>
+                        <span class="metric-label">Dashboards</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-value">$200K</span>
+                        <span class="metric-label">Cost Savings</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-value">35%</span>
+                        <span class="metric-label">Defect Reduction</span>
+                    </div>
+                </div>
+                
+                <div class="experience-tech">
+                    <h4>Technologies Used</h4>
+                    <div class="tag-group">
+                        <span class="tag tag-accent">Python</span>
+                        <span class="tag tag-accent">SQL</span>
+                        <span class="tag tag-accent">Tableau</span>
+                        <span class="tag tag-accent">Power BI</span>
+                        <span class="tag tag-accent">Excel</span>
+                        <span class="tag tag-accent">JIRA</span>
+                        <!-- TODO: Add more technologies you used -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Graduate Teaching Assistant -->
+            <div class="experience-card fade-in">
+                <div class="experience-header">
+                    <div>
+                        <h3 class="experience-title">Graduate Teaching Assistant</h3>
+                        <p class="experience-company">Illinois Institute of Technology</p>
+                        <p class="experience-location">📍 Chicago, IL, USA</p>
+                    </div>
+                    <!-- TODO: Update dates -->
+                    <span class="experience-date">Aug 2025 - Dec 2025</span>
+                </div>
+                
+                <p class="experience-summary">
+                    <!-- TODO: Customize description -->
+                    Supported faculty in delivering course content, grading assignments, and mentoring students 
+                    in Project Management. Assisted in developing learning materials and facilitating discussions to enhance student understanding.
+                </p>
+                
+                <div class="experience-achievements">
+                    <h4>Responsibilities</h4>
+                    <div class="achievement-list">
+                        <!-- TODO: Add your GTA responsibilities -->
+                        <div class="achievement-item">
+                            <span class="achievement-icon">✓</span>
+                            <span>Analyzed multi-factor datasets (attendance, quizzes, assignments) in Excel (VLOOKUP, Pivot Tables) to correlate student 
+                                engagement with grade performance, translating raw trends into data-driven narratives for faculty.</span>
+                        </div>
+                        <div class="achievement-item">
+                            <span class="achievement-icon">✓</span>
+                            <span>Graded assignments and provided constructive feedback</span>
+                        </div>
+                        <div class="achievement-item">
+                            <span class="achievement-icon">✓</span>
+                            <span>Developed supplementary learning materials and tutorials</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="experience-tech">
+                    <h4>Technologies Used</h4>
+                    <div class="tag-group">
+                        <span class="tag tag-accent">Python</span>
+                        <span class="tag tag-accent">Excel</span>
+                        <span class="tag tag-accent">project plan</span>
+                        <!-- TODO: Add more technologies you used -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- TODO: Add any internships here -->
+            <div class="experience-card fade-in">
+                <div class="experience-header">
+                    <div>
+                        <h3 class="experience-title"> Data Analytics Intern (IoT Focus) Inmovidu </h3>
+                        <p class="experience-company">InMovidu</p>
+                        <p class="experience-location">📍 Remote(India)</p>
+                    </div>
+                    <span class="experience-date">Jun 2020 - Aug 2020</span>
+                </div>
+                <p class="experience-summary">
+                    <!-- TODO: Customize description -->
+                    Analyzed telemetry data from IoT sensor simulations to identify performance trends and operational anomalies. 
+                    Developed data cleaning pipelines and predictive models to improve system reliability and support proactive maintenance strategies.
+                </p>
+                
+                <div class="experience-achievements">
+                    <h4>Responsibilities</h4>
+                    <div class="achievement-list">
+                        <!-- TODO: Add your GTA responsibilities -->
+                        <div class="achievement-item">
+                            <span class="achievement-icon">✓</span>
+                            <span>Processed raw sensor logs using Python (Pandas) to handle missing timestamps and remove 
+                                noise, ensuring high-quality datasets for analysis.
+                            </span>
+                        </div>
+                        <div class="achievement-item">
+                            <span class="achievement-icon">✓</span>
+                            <span>Conducted Exploratory Data Analysis (EDA) with Seaborn, creating correlation 
+                                heatmaps to visualize device metrics and detect failure patterns.
+                            </span>
+                        </div>
+                        <div class="achievement-item">
+                            <span class="achievement-icon">✓</span>
+                            <span>Built a predictive maintenance classifier using Scikit-Learn that 
+                                flagged potential system faults with 85% validation accuracy.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="experience-tech">
+                    <h4>Technologies Used</h4>
+                    <div class="tag-group">
+                        <span class="tag tag-accent">Python (Pandas, NumPy, Scikit-Learn)</span>
+                        <span class="tag tag-accent">SQL</span>
+                        <span class="tag tag-accent">Matplotlib</span>
+                        <span class="tag tag-accent">Seaborn</span>
+                        <!-- TODO: Add more technologies you used -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Summary -->
+    <section class="section bg-secondary">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-tag">Academic Background</span>
+                <h2 class="section-title">Education</h2>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <span class="timeline-date">Jan 2024 - Dec 2025</span>
+                    <h3 class="timeline-title">MS Information Technology and management</h3>
+                    <h4 class="timeline-subtitle">Specialization: Data analytics and management</h4>
+                    <p class="timeline-subtitle">Illinois Institute of Technology, Chicago</p>
+                    <p class="timeline-content">
+                        Perfect 4.0 GPA. Published research at ACM SIGCITE 2025 and IGI Global. Focus areas include machine learning, 
+                        statistical analysis, data visualization, and big data technologies.
+                    </p>
+                    <div class="tag-group mt-sm">
+                        <span class="tag tag-accent">GPA: 4.0</span>
+                        <span class="tag tag-accent">Published Researcher</span>
+                        <span class="tag tag-accent">Upsilon Pi Epsilon (UPE) Member</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <!-- TODO: Update with your bachelor's info -->
+                    <span class="timeline-date">May 2018 - May 2022</span>
+                    <h3 class="timeline-title">B.Tech Electronics and Communication Engineering</h3>
+                    <p class="timeline-subtitle">Chaitanya Bharathi Institute of Technology(CBIT), India</p>
+                    <p class="timeline-content">
+                        <!-- TODO: Add your bachelor's description -->
+                        Graduated with First Class Honors. Relevant coursework included Digital Signal Processing, Microprocessors,
+                        and Embedded Systems. Completed a capstone project on IoT-based water management system.
+                    </p>
+                </div>
+            </div>
+
+            <div class="text-center mt-xl">
+                <a href="education.html" class="btn btn-secondary">View Full Education Details</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section">
+        <div class="container text-center">
+            <span class="section-tag fade-in">What I Can Do</span>
+            <h2 class="section-title fade-in">Ready to Add Value to Your Team</h2>
+            <p class="fade-in" style="max-width: 600px; margin: var(--spacing-md) auto var(--spacing-lg); color: var(--text-secondary);">
+                Looking for opportunities to leverage my data analytics expertise and deliver impactful solutions.
+            </p>
+            <div class="flex flex-center gap-md flex-wrap fade-in">
+                <a href="projects.html" class="btn btn-primary">View My Projects</a>
+                <a href="contact.html" class="btn btn-secondary">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="https://github.com/Vinay9015" class="footer-link" target="_blank" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/kambhampati-vinay/" class="footer-link" target="_blank" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                    <a href="mailto:vinaykambhampati07@gmail.com" class="footer-link" aria-label="Email">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </a>
+                </div>
+                <p class="footer-text">© <span class="current-year">2025</span> Vinay. Built with passion for data.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

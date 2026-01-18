@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vinay's Research Publications - ACM SIGCITE 2025">
+    <title>Publications | Vinay - Data Analyst</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    
+    <style>
+        .publication-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-xl);
+            margin-bottom: var(--spacing-lg);
+            transition: var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .publication-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-accent);
+        }
+        
+        .publication-card:hover {
+            border-color: var(--border-hover);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .publication-type {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: var(--accent-subtle);
+            border: 1px solid var(--accent);
+            border-radius: var(--radius-full);
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .publication-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .publication-authors {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .publication-authors strong {
+            color: var(--accent);
+        }
+        
+        .publication-venue {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .publication-abstract {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin-bottom: var(--spacing-md);
+            padding: var(--spacing-md);
+            background: var(--bg-secondary);
+            border-radius: var(--radius-md);
+            border-left: 3px solid var(--accent);
+        }
+        
+        .publication-links {
+            display: flex;
+            gap: var(--spacing-sm);
+            flex-wrap: wrap;
+            padding-top: var(--spacing-md);
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .interest-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            text-align: center;
+            transition: var(--transition-normal);
+        }
+        
+        .interest-card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-5px);
+        }
+        
+        .interest-icon {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-sm);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">VINAY</a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="experience.html" class="nav-link">Experience</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="dashboards.html" class="nav-link">Dashboards</a></li>
+                <li><a href="skills.html" class="nav-link">Skills</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="page-hero-bg"></div>
+        <div class="container">
+            <div class="page-hero-content">
+                <span class="badge fade-in">Research</span>
+                <h1 class="fade-in stagger-1">Publications</h1>
+                <p class="fade-in stagger-2" style="max-width: 600px; color: var(--text-secondary); margin-top: var(--spacing-md);">
+                    Peer-reviewed research contributions in AI, machine learning, and educational technology.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-tag">Published Work</span>
+                <h2 class="section-title">Research Papers</h2>
+            </div>
+
+            <div class="publication-card fade-in">
+                <span class="publication-type">Conference Paper</span>
+                <!-- TODO: Update with your exact paper title -->
+                <h3 class="publication-title">Personalizing Educational Responses with LLMs: The Influence of Knowledge, Interests, and Preferences</h3>
+                <!-- TODO: Update author names -->
+                <p class="publication-authors"><strong>Vinay Kambhampati</strong>, Yong Zheng, Xiaosong Lu, Xintong Yu</p>
+                <div class="publication-venue">
+                    <span>📚</span>
+                    <span><strong>ACM SIGCITE 2025</strong> — ACM Special Interest Group on Computer Science Education</span>
+                </div>
+                
+                <div class="publication-abstract">
+                    <strong>Abstract:</strong>
+                    <!-- TODO: Add your paper abstract -->
+                    Personalized learning seeks to improve educational outcomes by delivering content and instructional 
+                    approaches tailored to individual learners’ needs. Recent advancements in artificial intelligence, 
+                    particularly the emergence of large language models (LLMs), have introduced new opportunities for generating 
+                    personalized educational content. Despite this progress, it remains unclear which learner-specific profile 
+                    attributes most effectively inform LLM-generated responses. The answer may vary from contexts to contexts. 
+                    In this paper, our study examines two personalized learning scenarios: term explanations and coding explanations. 
+                    We investigate the impact of four types of personalization resources – learners’ knowledge levels, hobbies, 
+                    favorite subjects, and a combination of all three, on the perceived quality of LLM outputs. 
+                    We conducted a user study where students evaluated and chose their preferred personalized responses. 
+                    Based on their selections, we performed comparative and statistical analyses to assess the effectiveness of each 
+                    personalization strategy. The results showed that students tended to favor personalized responses that were generated 
+                    using their knowledge level as part of the user profile, highlighting the importance of this factor in producing 
+                    effective personalized content. However, the patterns varied across different scenarios, and distinct individual 
+                    differences emerged when users were grouped.
+                </div>
+                
+                <div class="tag-group mb-md">
+                    <span class="tag tag-accent">Large Language Models</span>
+                    <span class="tag tag-accent">Educational Technology</span>
+                    <span class="tag tag-accent">Personalized Learning</span>
+                    <span class="tag tag-accent">NLP</span>
+                </div>
+                
+                <div class="publication-links">
+                    <!-- TODO: Add actual paper link when available -->
+                    <a href="https://doi.org/10.1145/3769694.3771123" class="btn btn-primary btn-sm" target="_blank">Read Paper</a>
+                </div>
+            </div>
+
+            <div class="section-header fade-in">
+                <h2 class="section-title">Book chapters</h2>
+            </div>
+
+            <div class="publication-card fade-in">
+                <span class="publication-type">Book chapter</span>
+                <!-- TODO: Update with your exact paper title -->
+                <h3 class="publication-title">AI-Enhanced Digital Literacy: A Framework for Higher Education and Workforce Collaboration</h3>
+                <h4 class="publication-title">Book:Institutes of Higher Education (IHE) and Workforce Collaboration for Digital Literacy</h4>
+                <!-- TODO: Update author names -->
+                <p class="publication-authors"><strong>Vinay Kambhampati</strong>, Rahul patel</p>
+                <div class="publication-venue">
+                    <span>📚</span>
+                    <span><strong>IGI Global</strong> —IGI Global Scientific Publishing</span>
+                </div>
+                
+                <div class="publication-abstract">
+                    <strong>Abstract:</strong>
+                    <!-- TODO: Add your paper abstract -->
+                    The rapid advancement of artificial intelligence (AI) has forced the reassessment of how individuals are prepared for 
+                    an AI-integrated future and what is needed to reshape education, work, and digital interaction. 
+                    In this chapter authors studied and explored the need for a collaborative approach between educational 
+                    institutions and industry to bridge the gap between academic training and workplace demands. 
+                    This research study highlights the importance of critical thinking, practical application, and confidence building 
+                    in AI-enhanced environments in addition to tool-specific training. The analysis is structured around 
+                    three core areas: (a) Academic Integration – the incorporation of AI and digital skills across university curricula;
+                     (b) Industry Requirements – the role of businesses in shaping curriculum through real-world insights; and 
+                     (c) Collaborative Frameworks – the development of industry-education partnerships that foster integrated learning 
+                     opportunities.
+                </div>
+                
+                <div class="tag-group mb-md">
+                    <span class="tag tag-accent">AI-enhanced digital Literacy</span>
+                    <span class="tag tag-accent">Workforce Readiness</span>
+                    <span class="tag tag-accent">Digital Competencies</span>
+                    <span class="tag tag-accent">No-Code AI Platforms</span>
+                    <span class="tag tag-accent">AI Competency Assessment</span>
+                    <span class="tag tag-accent">AI Upskilling</span>
+                    <span class="tag tag-accent">AI Ethics</span>
+                </div>
+                
+                <div class="publication-links">
+                    <!-- TODO: Add actual paper link when available -->
+                    <a href="https://www.igi-global.com/chapter/ai-enhanced-digital-literacy/376025" class="btn btn-primary btn-sm" target="_blank">Read chapter</a>
+                    <a href="https://www.igi-global.com/book/institutes-higher-education-ihe-workforce/358015" class="btn btn-secondary btn-sm" target="_blank">View Book</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section bg-secondary">
+        <div class="container">
+            <div class="section-header text-center fade-in">
+                <span class="section-tag">Areas of Interest</span>
+                <h2 class="section-title">Research Interests</h2>
+            </div>
+            
+            <div class="grid grid-4">
+                <div class="interest-card fade-in">
+                    <div class="interest-icon">🤖</div>
+                    <h3>Large Language Models</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Applications in education</p>
+                </div>
+                <div class="interest-card fade-in">
+                    <div class="interest-icon">📊</div>
+                    <h3>Machine Learning</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Predictive modeling</p>
+                </div>
+                <div class="interest-card fade-in">
+                    <div class="interest-icon">🎓</div>
+                    <h3>EdTech</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">AI-powered learning</p>
+                </div>
+                <div class="interest-card fade-in">
+                    <div class="interest-icon">📈</div>
+                    <h3>Data Analytics</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Business insights</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container text-center">
+            <span class="section-tag fade-in">Collaboration</span>
+            <h2 class="section-title fade-in">Interested in Research?</h2>
+            <p class="fade-in" style="max-width: 600px; margin: var(--spacing-md) auto var(--spacing-lg); color: var(--text-secondary);">
+                Open to discussing research ideas and collaborations in AI, ML, and data analytics.
+            </p>
+            <a href="contact.html" class="btn btn-primary fade-in">Get In Touch</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="https://github.com/Vinay9015" class="footer-link" target="_blank" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/kambhampati-vinay/" class="footer-link" target="_blank" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                    <a href="mailto:vinaykambhampati07@gmail.com" class="footer-link" aria-label="Email">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </a>
+                </div>
+                <p class="footer-text">© <span class="current-year">2025</span> Vinay. Built with passion for data.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/main.js"></script>
+</body>
+</html>
