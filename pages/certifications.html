@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Vinay's Professional Certifications">
     <title>Certifications | Vinay - Data Analyst</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css">
-    
+
     <style>
         .cert-card {
             background: var(--bg-card);
@@ -22,13 +22,13 @@
             align-items: flex-start;
             transition: var(--transition-normal);
         }
-        
+
         .cert-card:hover {
             border-color: var(--border-hover);
             transform: translateY(-5px);
             box-shadow: var(--shadow-lg);
         }
-        
+
         .cert-badge {
             width: 80px;
             height: 80px;
@@ -41,11 +41,17 @@
             font-size: 2rem;
             flex-shrink: 0;
         }
-        
+
+        .cert-badge img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+        }
+
         .cert-content {
             flex: 1;
         }
-        
+
         .cert-issuer {
             font-size: 0.75rem;
             letter-spacing: 0.15em;
@@ -53,29 +59,29 @@
             color: var(--accent);
             margin-bottom: var(--spacing-xs);
         }
-        
+
         .cert-title {
             font-family: var(--font-display);
             font-size: 1.25rem;
             margin-bottom: var(--spacing-xs);
         }
-        
+
         .cert-date {
             font-size: 0.85rem;
             color: var(--text-muted);
             margin-bottom: var(--spacing-sm);
         }
-        
+
         .cert-description {
             font-size: 0.9rem;
             color: var(--text-secondary);
             margin-bottom: var(--spacing-md);
         }
-        
+
         .cert-skills {
             margin-bottom: var(--spacing-md);
         }
-        
+
         .cert-link {
             display: inline-flex;
             align-items: center;
@@ -84,11 +90,11 @@
             color: var(--accent);
             transition: var(--transition-normal);
         }
-        
+
         .cert-link:hover {
             text-decoration: underline;
         }
-        
+
         .in-progress {
             display: inline-block;
             padding: 0.25rem 0.75rem;
@@ -99,13 +105,20 @@
             color: #feca57;
             margin-left: var(--spacing-sm);
         }
-        
+
+        .credential-id {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-family: var(--font-mono);
+            margin-bottom: var(--spacing-sm);
+        }
+
         @media (max-width: 768px) {
             .cert-card {
                 flex-direction: column;
                 text-align: center;
             }
-            
+
             .cert-badge {
                 margin: 0 auto;
             }
@@ -137,7 +150,7 @@
                 <span class="badge fade-in">Credentials</span>
                 <h1 class="fade-in stagger-1">Certifications</h1>
                 <p class="fade-in stagger-2" style="max-width: 600px; color: var(--text-secondary); margin-top: var(--spacing-md);">
-                    Professional certifications demonstrating expertise in data analytics, cloud, and programming.
+                    Professional certifications demonstrating expertise in data analytics, programming, and technology.
                 </p>
             </div>
         </div>
@@ -146,130 +159,125 @@
     <section class="section">
         <div class="container">
             <div class="grid" style="gap: var(--spacing-lg);">
-                
-                <!-- TODO: Add your actual certifications below -->
-                <!-- Replace placeholders with your real certifications -->
-                
-                <!-- Certification 1 -->
+
+                <!-- Google Advanced Data Analytics - In Progress -->
                 <div class="cert-card fade-in">
                     <div class="cert-badge">📊</div>
                     <div class="cert-content">
                         <span class="cert-issuer">Google</span>
-                        <!-- TODO: Update certification name -->
-                        <h3 class="cert-title">Google Data Analytics Professional Certificate</h3>
-                        <!-- TODO: Update date -->
-                        <p class="cert-date">Issued: Month 2024 • No Expiration</p>
+                        <h3 class="cert-title">
+                            Google Advanced Data Analytics Professional Certificate
+                            <span class="in-progress">In Progress</span>
+                        </h3>
+                        <p class="cert-date">Expected: 2026</p>
                         <p class="cert-description">
-                            Comprehensive program covering data cleaning, analysis, visualization, and 
-                            using tools like spreadsheets, SQL, Tableau, and R programming.
-                        </p>
-                        <div class="cert-skills">
-                            <div class="tag-group">
-                                <span class="tag">Data Analysis</span>
-                                <span class="tag">SQL</span>
-                                <span class="tag">Tableau</span>
-                                <span class="tag">R</span>
-                            </div>
-                        </div>
-                        <!-- TODO: Add your credential link -->
-                        <a href="#" class="cert-link" target="_blank">
-                            View Credential →
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Certification 2 -->
-                <div class="cert-card fade-in">
-                    <div class="cert-badge">☁️</div>
-                    <div class="cert-content">
-                        <span class="cert-issuer">Microsoft</span>
-                        <!-- TODO: Update certification name -->
-                        <h3 class="cert-title">Microsoft Azure Data Fundamentals (DP-900)</h3>
-                        <!-- TODO: Update date -->
-                        <p class="cert-date">Issued: Month 2024</p>
-                        <p class="cert-description">
-                            Foundation-level certification covering core data concepts, relational and 
-                            non-relational data, and analytics workloads on Azure.
-                        </p>
-                        <div class="cert-skills">
-                            <div class="tag-group">
-                                <span class="tag">Azure</span>
-                                <span class="tag">Data Concepts</span>
-                                <span class="tag">Cloud</span>
-                            </div>
-                        </div>
-                        <!-- TODO: Add your credential link -->
-                        <a href="#" class="cert-link" target="_blank">
-                            View Credential →
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Certification 3 -->
-                <div class="cert-card fade-in">
-                    <div class="cert-badge">🐍</div>
-                    <div class="cert-content">
-                        <span class="cert-issuer">DataCamp / Coursera / etc.</span>
-                        <!-- TODO: Update certification name -->
-                        <h3 class="cert-title">Python for Data Science</h3>
-                        <!-- TODO: Update date -->
-                        <p class="cert-date">Issued: Month 2023</p>
-                        <p class="cert-description">
-                            Comprehensive Python programming for data science including pandas, NumPy, 
-                            data manipulation, and visualization techniques.
+                            Advanced program covering statistical analysis, regression models, machine learning,
+                            and data-driven decision making using Python and advanced analytical techniques.
                         </p>
                         <div class="cert-skills">
                             <div class="tag-group">
                                 <span class="tag">Python</span>
-                                <span class="tag">Pandas</span>
-                                <span class="tag">NumPy</span>
+                                <span class="tag">Machine Learning</span>
+                                <span class="tag">Statistics</span>
+                                <span class="tag">Regression</span>
                             </div>
                         </div>
-                        <!-- TODO: Add your credential link -->
-                        <a href="#" class="cert-link" target="_blank">
+                    </div>
+                </div>
+
+                <!-- Get Started with Python -->
+                <div class="cert-card fade-in">
+                    <div class="cert-badge">🐍</div>
+                    <div class="cert-content">
+                        <span class="cert-issuer">Google</span>
+                        <h3 class="cert-title">Get Started with Python</h3>
+                        <p class="cert-date">Issued: January 2026</p>
+                        <p class="credential-id">Credential ID: SQBZ0X3RBVAE</p>
+                        <p class="cert-description">
+                            Foundational Python programming course covering core concepts, data structures,
+                            and practical programming skills for data analysis.
+                        </p>
+                        <div class="cert-skills">
+                            <div class="tag-group">
+                                <span class="tag">Python</span>
+                                <span class="tag">Programming</span>
+                                <span class="tag">Data Structures</span>
+                            </div>
+                        </div>
+                        <a href="https://www.coursera.org/account/accomplishments/verify/SQBZ0X3RBVAE" class="cert-link" target="_blank">
                             View Credential →
                         </a>
                     </div>
                 </div>
 
-                <!-- Certification 4 - In Progress Example -->
+                <!-- Go Beyond the Numbers -->
                 <div class="cert-card fade-in">
-                    <div class="cert-badge">🤖</div>
+                    <div class="cert-badge">📈</div>
                     <div class="cert-content">
-                        <span class="cert-issuer">AWS / Google / etc.</span>
-                        <!-- TODO: Update or remove if not applicable -->
-                        <h3 class="cert-title">
-                            Machine Learning Specialization
-                            <span class="in-progress">In Progress</span>
-                        </h3>
-                        <p class="cert-date">Expected: Month 2025</p>
+                        <span class="cert-issuer">Google</span>
+                        <h3 class="cert-title">Go Beyond the Numbers: Translate Data into Insights</h3>
+                        <p class="cert-date">Issued: January 2026</p>
+                        <p class="credential-id">Credential ID: JTKE0GXNP6UI</p>
                         <p class="cert-description">
-                            Advanced certification covering machine learning algorithms, deep learning, 
-                            and practical ML applications.
+                            Advanced course on exploratory data analysis, data visualization, and
+                            communicating data insights effectively to stakeholders.
                         </p>
                         <div class="cert-skills">
                             <div class="tag-group">
+                                <span class="tag">Data Analysis</span>
+                                <span class="tag">Visualization</span>
+                                <span class="tag">Storytelling</span>
+                            </div>
+                        </div>
+                        <a href="https://www.coursera.org/account/accomplishments/verify/JTKE0GXNP6UI" class="cert-link" target="_blank">
+                            View Credential →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- IoT and Robotics -->
+                <div class="cert-card fade-in">
+                    <div class="cert-badge">🤖</div>
+                    <div class="cert-content">
+                        <span class="cert-issuer">Inmovidu / BITS Pilani</span>
+                        <h3 class="cert-title">IoT and Robotics</h3>
+                        <p class="cert-date">Issued: June 2020</p>
+                        <p class="cert-description">
+                            Internship program covering Internet of Things and Robotics fundamentals
+                            under the technology department from June 6th to July 20th, 2020.
+                        </p>
+                        <div class="cert-skills">
+                            <div class="tag-group">
+                                <span class="tag">Git</span>
+                                <span class="tag">Python</span>
                                 <span class="tag">Machine Learning</span>
-                                <span class="tag">Deep Learning</span>
-                                <span class="tag">TensorFlow</span>
+                                <span class="tag">Pandas</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- TODO: Add more certifications as needed -->
-                <!--
+                <!-- Invesco Hack2Hire -->
                 <div class="cert-card fade-in">
                     <div class="cert-badge">🏆</div>
                     <div class="cert-content">
-                        <span class="cert-issuer">Issuing Organization</span>
-                        <h3 class="cert-title">Certification Name</h3>
-                        <p class="cert-date">Issued: Month Year</p>
-                        <p class="cert-description">Description of the certification.</p>
-                        <a href="#" class="cert-link" target="_blank">View Credential →</a>
+                        <span class="cert-issuer">Invesco India Private Limited</span>
+                        <h3 class="cert-title">Invesco Hack2Hire 2021</h3>
+                        <p class="cert-date">December 4, 2021</p>
+                        <p class="cert-description">
+                            Participated in a 12-hour hackathon at Invesco India Private Limited,
+                            demonstrating problem-solving skills and technical expertise under time pressure.
+                        </p>
+                        <div class="cert-skills">
+                            <div class="tag-group">
+                                <span class="tag">Hackathon</span>
+                                <span class="tag">Problem Solving</span>
+                                <span class="tag">Team Collaboration</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                -->
+
             </div>
         </div>
     </section>
@@ -281,23 +289,23 @@
                 <span class="section-tag">Continuous Learning</span>
                 <h2 class="section-title">Learning Platforms</h2>
             </div>
-            
+
             <div class="grid grid-4" style="gap: var(--spacing-md);">
                 <div class="card text-center fade-in" style="padding: var(--spacing-lg);">
                     <div style="font-size: 2rem; margin-bottom: var(--spacing-sm);">📚</div>
                     <h4>Coursera</h4>
                 </div>
                 <div class="card text-center fade-in" style="padding: var(--spacing-lg);">
-                    <div style="font-size: 2rem; margin-bottom: var(--spacing-sm);">📖</div>
-                    <h4>DataCamp</h4>
-                </div>
-                <div class="card text-center fade-in" style="padding: var(--spacing-lg);">
                     <div style="font-size: 2rem; margin-bottom: var(--spacing-sm);">🎓</div>
-                    <h4>Udemy</h4>
+                    <h4>Google</h4>
                 </div>
                 <div class="card text-center fade-in" style="padding: var(--spacing-lg);">
-                    <div style="font-size: 2rem; margin-bottom: var(--spacing-sm);">💻</div>
+                    <div style="font-size: 2rem; margin-bottom: var(--spacing-sm);">💼</div>
                     <h4>LinkedIn Learning</h4>
+                </div>
+                <div class="card text-center fade-in" style="padding: var(--spacing-lg);">
+                    <div style="font-size: 2rem; margin-bottom: var(--spacing-sm);">🎯</div>
+                    <h4>Udemy</h4>
                 </div>
             </div>
         </div>
