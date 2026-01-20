@@ -29,6 +29,96 @@
         .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-md); }
         @media (max-width: 968px) { .contact-grid { grid-template-columns: 1fr; } .form-row { grid-template-columns: 1fr; } }
     </style>
+    <style>
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 60px 40px;
+            background: linear-gradient(135deg, rgba(76, 175, 80, 0.1) 0%, rgba(33, 150, 243, 0.1) 100%);
+            border-radius: 16px;
+            border: 1px solid rgba(76, 175, 80, 0.3);
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .success-icon {
+            color: #4CAF50;
+            margin-bottom: 24px;
+            animation: scaleIn 0.5s ease-out 0.2s both;
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .success-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #4CAF50;
+            margin-bottom: 12px;
+        }
+
+        .success-text {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 32px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            .success-message {
+                background: linear-gradient(135deg, rgba(76, 175, 80, 0.15) 0%, rgba(33, 150, 243, 0.15) 100%);
+                border-color: rgba(76, 175, 80, 0.4);
+            }
+            
+            .success-text {
+                color: #aaa;
+            }
+        }
+    </style>
+
+        <!-- JavaScript -->
+    <script>
+        function submitForm() {
+            // Hide form
+            document.getElementById('contact-form').style.display = 'none';
+            // Show success message
+            document.getElementById('success-message').style.display = 'block';
+            // Scroll to success message
+            document.getElementById('success-message').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function resetForm() {
+            // Reset form fields
+            document.getElementById('contact-form').reset();
+            // Hide success message
+            document.getElementById('success-message').style.display = 'none';
+            // Show form again
+            document.getElementById('contact-form').style.display = 'block';
+            // Scroll to form
+            document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -126,12 +216,15 @@
                     <h3 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: var(--spacing-xs);">Send a Message</h3>
                     <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: var(--spacing-lg);">I'll get back to you soon.</p>
                     
-                    <!-- TODO: Set up form with Formspree.io (free) - Replace YOUR-FORMSPREE-ID -->
+        
+                    <!-- Contact Form -->
                     <form 
+                        id="contact-form"
                         action="https://docs.google.com/forms/d/e/1FAIpQLSf8XTAV0K4AJ_GgItxGPLYGKPGxa1GvTbxSOWuWq4S7KObPzQ/formResponse" 
                         method="POST" 
-                        target="_blank">
-    
+                        target="hidden_iframe"
+                        onsubmit="submitForm()">
+                        
                         <div class="form-row">
                             <div class="form-group">
                                 <label class="form-label" for="name">Name *</label>
@@ -152,6 +245,23 @@
                         </div>
                         <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Send Message</button>
                     </form>
+
+                    <!-- Hidden iframe to catch Google's response -->
+                    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
+                    <!-- Success Message -->
+                    <div id="success-message" class="success-message">
+                        <div class="success-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="success-title">Message Sent Successfully!</h3>
+                        <p class="success-text">Thank you for reaching out. I'll get back to you within 24-48 hours.</p>
+                        <button class="btn btn-primary" onclick="resetForm()">Send Another Message</button>
+                    </div>
+
                 </div>
             </div>
         </div>
