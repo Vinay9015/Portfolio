@@ -106,10 +106,4 @@ Modify CSS variables in `styles.css` to change the theme:
 }
 ```
 
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
----
-
 ⭐ If you found this helpful, please star the repository!
