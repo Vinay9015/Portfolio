@@ -12,6 +12,23 @@
     <link rel="stylesheet" href="../css/styles.css">
     
     <style>
+        .navbar {
+            padding: 0.75rem 2rem;
+        }
+        
+        .nav-container {
+            gap: 2rem;
+        }
+        
+        .nav-links {
+            gap: 0.15rem;
+        }
+        
+        .nav-link {
+            padding: 0.5rem 0.6rem;
+            font-size: 0.82rem;
+            white-space: nowrap;
+        }
         .projects-filter {
             display: flex;
             justify-content: center;
@@ -130,7 +147,7 @@
         
         .feature-item {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: var(--spacing-xs);
             font-size: 0.85rem;
             color: var(--text-secondary);
@@ -138,12 +155,36 @@
         
         .feature-item span:first-child {
             color: var(--accent);
+            flex-shrink: 0;
         }
         
         .project-links {
             display: flex;
             gap: var(--spacing-sm);
             flex-wrap: wrap;
+        }
+        
+        /* Badge for special projects */
+        .project-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent) 0%, #00b894 100%);
+            color: var(--bg-primary);
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 0.25rem 0.6rem;
+            border-radius: var(--radius-full);
+            margin-left: var(--spacing-xs);
+            vertical-align: middle;
+        }
+        
+        .project-badge.research {
+            background: linear-gradient(135deg, #a55eea 0%, #8854d0 100%);
+        }
+        
+        .project-badge.certification {
+            background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
         }
         
         @media (max-width: 968px) {
@@ -165,18 +206,23 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="../index.html" class="logo">VINAY</a>
+            <a href="index.html" class="logo">VINAY</a>
+            
             <button class="nav-toggle" aria-label="Toggle navigation">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
+            
             <ul class="nav-links">
-                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="../index.html" class="nav-link active">Home</a></li>
                 <li><a href="experience.html" class="nav-link">Experience</a></li>
-                <li><a href="projects.html" class="nav-link active">Projects</a></li>
+                <li><a href="education.html" class="nav-link">Education</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
                 <li><a href="dashboards.html" class="nav-link">Dashboards</a></li>
+                <li><a href="publications.html" class="nav-link">Publications</a></li>
                 <li><a href="skills.html" class="nav-link">Skills</a></li>
+                <li><a href="certifications.html" class="nav-link">Certifications</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
         </div>
@@ -190,7 +236,7 @@
                 <span class="badge fade-in">Portfolio</span>
                 <h1 class="fade-in stagger-1">Projects</h1>
                 <p class="fade-in stagger-2" style="max-width: 600px; color: var(--text-secondary); margin-top: var(--spacing-md);">
-                    A collection of data analytics, machine learning, and software development projects.
+                    A collection of data analytics, machine learning, and data engineering projects.
                 </p>
             </div>
         </div>
@@ -204,34 +250,36 @@
                 <button class="filter-btn active" data-filter="all">All Projects</button>
                 <button class="filter-btn" data-filter="ml">Machine Learning</button>
                 <button class="filter-btn" data-filter="data">Data Analytics</button>
-                <button class="filter-btn" data-filter="web">Full Stack</button>
+                <button class="filter-btn" data-filter="engineering">Data Engineering</button>
             </div>
             <!-- Projects Grid -->
 
-            <!-- Project 1: Crop Yield Prediction -->
+            <!-- Project 1: Waze User Churn Prediction (Google Advanced Data Analytics) -->
             <div class="project-card-large fade-in mb-lg" data-category="ml data">
                 <div class="project-card-content">
-                    <div class="project-image-container" style="background: linear-gradient(135deg, #1a3a2e 0%, #0d1f18 100%);">
-                        <img src="../assets/Project/Crop-yield-pipeline.png" alt="LinkedIn Data Pipeline" />
-                        <!-- TODO: Add project screenshot -->
-                        <!-- <span class="project-placeholder-icon">🌾</span> -->
+                    <div class="project-image-container" style="background: linear-gradient(135deg, #1a237e 0%, #0d1421 100%);">
+                        <!-- TODO: Add Waze project screenshot -->
+                        <!-- <img src="../assets/Project/waze-churn-analysis.png" alt="Waze User Churn Prediction"> -->
+                        <span class="project-placeholder-icon">📊</span>
                     </div>
                     <div class="project-details">
-                        <span class="project-type">Machine Learning / Data Analytics</span>
-                        <h3>Crop Yield Prediction</h3>
+                        <span class="project-type">Predictive Analytics / Machine Learning</span>
+                        <h3>Waze User Churn Prediction <span class="project-badge certification">Google Capstone</span></h3>
                         <p>
-                            Machine learning model to predict agricultural crop yields based on weather patterns, 
-                            soil conditions, and historical data. Helps farmers make data-driven decisions for 
-                            better agricultural planning.
+                            End-to-end churn prediction project from the Google Advanced Data Analytics Professional Certificate. 
+                            Analyzed 14,999 users to identify churn patterns, finding that churned users drove 240% more km per 
+                            driving day than retained users. Applied the PACE framework (Plan, Analyze, Construct, Execute) with 
+                            rigorous statistical analysis including hypothesis testing (p-value ≈ 0), confirming activity days as 
+                            the strongest churn predictor.
                         </p>
                         
                         <div class="project-features">
-                            <h4>Key Features</h4>
+                            <h4>Key Findings</h4>
                             <div class="feature-list">
-                                <div class="feature-item"><span>→</span> Multiple regression models comparison</div>
-                                <div class="feature-item"><span>→</span> Weather data integration</div>
-                                <div class="feature-item"><span>→</span> Feature importance analysis</div>
-                                <div class="feature-item"><span>→</span> Visualization dashboard</div>
+                                <div class="feature-item"><span>→</span> 18% churn rate across 14,999 users with 12 behavioral features</div>
+                                <div class="feature-item"><span>→</span> Churned users = "super drivers" (698 km vs 289 km per driving day)</div>
+                                <div class="feature-item"><span>→</span> Activity days is strongest predictor (p ≈ 0); device type has no impact</div>
+                                <div class="feature-item"><span>→</span> Built regression & ML models (Random Forest, XGBoost)</div>
                             </div>
                         </div>
                         
@@ -239,58 +287,63 @@
                             <span class="tag tag-accent">Python</span>
                             <span class="tag tag-accent">Pandas</span>
                             <span class="tag tag-accent">Scikit-learn</span>
+                            <span class="tag tag-accent">Tableau</span>
+                            <span class="tag tag-accent">XGBoost</span>
                             <span class="tag tag-accent">Matplotlib</span>
+                            <span class="tag tag-accent">Seaborn</span>
+                            <span class="tag tag-accent">SciPy</span>
                         </div>
                         
                         <div class="project-links">
-                            <!-- TODO: Add your actual GitHub link -->
-                            <a href="https://github.com/Vinay9015/Crop-Yield-Prediction-System" class="btn btn-primary btn-sm" target="_blank">
+                            <a href="https://github.com/Vinay9015/Waze-User-Churn-Prediction" class="btn btn-primary btn-sm" target="_blank">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                                GitHub-Code
+                                GitHub
                             </a>
+                            <a href="certifications.html" class="btn btn-secondary btn-sm">View Certification</a>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Project 2: LinkedIn Data Pipeline -->
-            <div class="project-card-large fade-in mb-lg" data-category="data">
+            <div class="project-card-large fade-in mb-lg" data-category="data engineering">
                 <div class="project-card-content">
                     <div class="project-image-container" style="background: linear-gradient(135deg, #2d1b4e 0%, #1a0a2e 100%);">
-                            <img src="../assets/Project/Linked-data-pipeline.png" alt="LinkedIn Data Pipeline" />
+                        <img src="../assets/Project/Linked-data-pipeline.png" alt="LinkedIn Data Pipeline" />
                     </div>
                     <div class="project-details">
-                        <span class="project-type">Data Engineering / Cloud</span>
+                        <span class="project-type">Data Engineering / Cloud Architecture</span>
                         <h3>LinkedIn Data Pipeline</h3>
                         <p>
-                            End-to-end data pipeline built with Azure Data Lakehouse architecture for processing 
-                            and analyzing LinkedIn data. Implements ETL workflows for data extraction, transformation, 
-                            and loading into a data warehouse.
+                            Developed an automated ETL pipeline using Proxycurl API and Pentaho, designing a Medallion Architecture 
+                            (Bronze-Silver-Gold) with Azure Blob Storage and Dremio to support scalable analytics. Processed and 
+                            analyzed 120+ LinkedIn profiles with automated data extraction, transformation, and loading into a 
+                            data lakehouse for Tableau reporting.
                         </p>
                         
                         <div class="project-features">
                             <h4>Key Features</h4>
                             <div class="feature-list">
-                                <div class="feature-item"><span>→</span> Azure Data Lakehouse architecture</div>
-                                <div class="feature-item"><span>→</span> Automated ETL pipelines</div>
-                                <div class="feature-item"><span>→</span> Power BI visualization</div>
-                                <div class="feature-item"><span>→</span> Data quality monitoring</div>
+                                <div class="feature-item"><span>→</span> Medallion Architecture (Bronze-Silver-Gold layers)</div>
+                                <div class="feature-item"><span>→</span> Proxycurl API integration for 120+ LinkedIn profiles</div>
+                                <div class="feature-item"><span>→</span> Azure Blob Storage + Dremio data lakehouse</div>
+                                <div class="feature-item"><span>→</span> Tableau dashboard for analytics reporting</div>
                             </div>
                         </div>
                         
                         <div class="tag-group mb-md">
-                            <span class="tag tag-accent">Azure</span>
-                            <span class="tag tag-accent">Data Factory</span>
-                            <span class="tag tag-accent">Pentaho-ETL</span>
-                            <span class="tag tag-accent">Power BI</span>
-                            <span class="tag tag-accent">SQL</span>
+                            <span class="tag tag-accent">Pentaho ETL</span>
+                            <span class="tag tag-accent">MySQL</span>
+                            <span class="tag tag-accent">Azure Blob Storage</span>
+                            <span class="tag tag-accent">Dremio</span>
+                            <span class="tag tag-accent">Tableau</span>
+                            <span class="tag tag-accent">REST API</span>
                         </div>
                         
                         <div class="project-links">
-                            <!-- TODO: Add your actual GitHub link -->
                             <a href="https://github.com/Vinay9015/LinkedIn-Data-Pipeline-And-Analytics-Platform" class="btn btn-primary btn-sm" target="_blank">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                                GitHub-Code
+                                GitHub
                             </a>
                             <a href="dashboards.html" class="btn btn-secondary btn-sm">View Dashboard</a>
                         </div>
@@ -298,33 +351,31 @@
                 </div>
             </div>
 
-            <!-- Project 3: Student Survey System -->
-            <div class="project-card-large fade-in mb-lg" data-category="data">
+            <!-- Project 3: LLM Education Project (ACM Published) -->
+            <div class="project-card-large fade-in mb-lg" data-category="data ml">
                 <div class="project-card-content">
                     <div class="project-image-container" style="background: linear-gradient(135deg, #3d2a1a 0%, #1f150d 100%);">
                         <img src="../assets/Project/LLM-education-pipeline.png" alt="LLM Education Pipeline" />
-                        <!-- TODO: Add project screenshot -->
-                        <!-- <span class="project-placeholder-icon">📋</span> -->
                     </div>
                     <div class="project-details">
-                        <span class="project-type">Big Data / Analytics</span>
-                        <h3>Personalized Student Question Answering System Using LLM Prompt Engineering</h3>
+                        <span class="project-type">Research / Big Data Analytics</span>
+                        <h3>Personalized Student Q&A Using LLM <span class="project-badge research">ACM Published</span></h3>
                         <p>
-                            Led a 3-member research team evaluating personalized LLM educational responses through systematic prompt engineering. 
-                            Built a Flask web application collecting data from 37 students across 7 technical domains (Java, SQL, Data Mining, IoT, HCI, Blockchain). 
-                            Tested 5 prompt personalization strategies (Default, Skills-based, Hobbies-based, Subjects-based, All-factors). Statistical analysis revealed 
-                            that Skills-Based personalization achieved the best performance (lowest average rank: 2.35 vs 2.9+, highest #1 rankings: 35%). 
-                            LLM responses improved understanding by an average of 1.1 points (1-5 scale), with beginners gaining the most 
-                            (median +2.0 points). Developed a Python analytics pipeline for processing feedback and generating comparative visualizations.
+                            Led a 3-member research team evaluating personalized LLM educational responses through systematic 
+                            prompt engineering. Built a Flask web application collecting data from 37 students across 7 technical 
+                            domains (Java, SQL, Data Mining, IoT, HCI, Blockchain). Statistical analysis revealed Skills-Based 
+                            personalization achieved best performance (lowest average rank: 2.35, highest #1 rankings: 35%). 
+                            LLM responses improved understanding by +1.1 points (1-5 scale), with beginners gaining the most 
+                            (median +2.0 points).
                         </p>
                         
                         <div class="project-features">
-                            <h4>Key Features</h4>
+                            <h4>Key Findings</h4>
                             <div class="feature-list">
-                                <div class="feature-item"><span>→</span> Apache Spark data processing</div>
-                                <div class="feature-item"><span>→</span> Statistical analysis</div>
-                                <div class="feature-item"><span>→</span> Sentiment analysis</div>
-                                <div class="feature-item"><span>→</span> Interactive visualizations</div>
+                                <div class="feature-item"><span>→</span> Tested 5 prompt personalization strategies across 37 students</div>
+                                <div class="feature-item"><span>→</span> Skills-based prompts ranked #1 in 35% of responses</div>
+                                <div class="feature-item"><span>→</span> Beginners gained median +2.0 points in understanding</div>
+                                <div class="feature-item"><span>→</span> Accepted at 26th ACM Conference on IT Education (SIGCITE)</div>
                             </div>
                         </div>
                         
@@ -332,15 +383,15 @@
                             <span class="tag tag-accent">Apache Spark</span>
                             <span class="tag tag-accent">Python</span>
                             <span class="tag tag-accent">PySpark</span>
+                            <span class="tag tag-accent">Flask</span>
                             <span class="tag tag-accent">SQL</span>
                             <span class="tag tag-accent">LLM</span>
                         </div>
                         
                         <div class="project-links">
-                            <!-- TODO: Add your actual GitHub link -->
                             <a href="https://github.com/Vinay9015/Survey" class="btn btn-primary btn-sm" target="_blank">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                                GitHub-survey
+                                GitHub (Survey Code)
                             </a>
                             <a href="https://doi.org/10.1145/3769694.3771123" class="btn btn-secondary btn-sm" target="_blank">View Published Paper</a>
                         </div>
@@ -348,61 +399,51 @@
                 </div>
             </div>
             
-            <!-- Project 5: ChurnGuard -->
-            <div class="project-card-large fade-in mb-lg" data-category="data">
+            <!-- Project 4: Crop Yield Prediction -->
+            <div class="project-card-large fade-in mb-lg" data-category="ml data">
                 <div class="project-card-content">
-                    <div class="project-image-container" style="background: linear-gradient(135deg, #1e3a5f 0%, #0d1b2a 100%);">
-                        <!-- TODO: Add project screenshot -->
-                        <!-- <img src="../assets/images/churnguard.png" alt="ChurnGuard Project"> -->
-                        <span class="project-placeholder-icon">🔮</span>
+                    <div class="project-image-container" style="background: linear-gradient(135deg, #1a3a2e 0%, #0d1f18 100%);">
+                        <img src="../assets/Project/Crop-yield-pipeline.png" alt="Crop Yield Prediction Pipeline" />
                     </div>
                     <div class="project-details">
-                        <span class="project-type">Data Analysis</span>
-                        <h3>Churn Analysis In Progress</h3>
+                        <span class="project-type">Machine Learning / Predictive Analytics</span>
+                        <h3>Crop Yield Prediction System</h3>
                         <p>
-                            I am currently developing ChurnGuard, a predictive analytics project hosted on Databricks. 
-                            The goal is to build a full-lifecycle machine learning solution—starting with rigorous data 
-                            cleaning and validation using Python and SQL, and culminating in a churn prediction model. 
-                            The final insights will be delivered through an interactive Tableau/Power BI dashboard to help businesses reduce customer attrition.
-                        
+                            Built end-to-end predictive analytics workflows using Python, SQL, and XGBoost, processing 50K+ 
+                            agricultural records to forecast crop yields with 87% accuracy. Applied K-Means Clustering to 
+                            segment 17 regions for data-driven irrigation optimization. Integrated weather patterns, soil 
+                            conditions, and historical data to help farmers make informed agricultural planning decisions.
                         </p>
                         
                         <div class="project-features">
                             <h4>Key Features</h4>
                             <div class="feature-list">
-                                <div class="feature-item"><span>→</span> Engineering a robust data pipeline on Databricks; utilizing 
-                                    SQL for data extraction and Python for extensive data cleaning, validation, and exploratory data analysis (EDA).</div>
-                                <div class="feature-item"><span>→</span> Interactive dashboard</div>
-                                <div class="feature-item"><span>→</span> Predictive Modeling</div>
-                                <div class="feature-item"><span>→</span> Customer segmentation analysis</div>
+                                <div class="feature-item"><span>→</span> Processed 50K+ records with 87% prediction accuracy</div>
+                                <div class="feature-item"><span>→</span> XGBoost model with feature importance analysis</div>
+                                <div class="feature-item"><span>→</span> K-Means Clustering for 17 regional segments</div>
+                                <div class="feature-item"><span>→</span> Weather & soil data integration for optimization</div>
                             </div>
                         </div>
                         
                         <div class="tag-group mb-md">
                             <span class="tag tag-accent">Python</span>
-                            <span class="tag tag-accent">Databricks</span>
-                            <span class="tag tag-accent">Tableau</span>
-                            <span class="tag tag-accent">MySQL</span>
-                            <span class="tag tag-accent">statistics</span>
+                            <span class="tag tag-accent">Pandas</span>
+                            <span class="tag tag-accent">SQL</span>
+                            <span class="tag tag-accent">XGBoost</span>
+                            <span class="tag tag-accent">Scikit-learn</span>
+                            <span class="tag tag-accent">Matplotlib</span>
                         </div>
                         
                         <div class="project-links">
-                            <!-- TODO: Add your actual GitHub link -->
-                            <a href="#" class="btn btn-primary btn-sm" target="_blank">
+                            <a href="https://github.com/Vinay9015/Crop-Yield-Prediction-System" class="btn btn-primary btn-sm" target="_blank">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                                In Progress
+                                GitHub
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- TODO: Add more projects as needed -->
-            <!--
-            <div class="project-card-large fade-in mb-lg" data-category="category">
-                ...
-            </div>
-            -->
         </div>
     </section>
 
