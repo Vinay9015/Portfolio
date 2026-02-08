@@ -248,7 +248,7 @@ p {
 /* ============================================
    NAVIGATION
    ============================================ */
-.navbar {
+ .navbar {
     position: fixed;
     top: 0;
     left: 0;
@@ -272,7 +272,7 @@ p {
     justify-content: space-between;
     max-width: 1400px;
     margin: 0 auto;
-}
+} 
 
 .logo {
     font-family: var(--font-display);

@@ -35,29 +35,7 @@
     <meta name="theme-color" content="#00d4aa">
     
     <style>
-        /* ========================================
-           PAGE-SPECIFIC STYLES
-           (Extends your existing styles.css)
-        ======================================== */
         
-        /* Fix navbar overlap */
-        .navbar {
-            padding: 0.75rem 2rem;
-        }
-        
-        .nav-container {
-            gap: 2rem;
-        }
-        
-        .nav-links {
-            gap: 0.15rem;
-        }
-        
-        .nav-link {
-            padding: 0.5rem 0.6rem;
-            font-size: 0.82rem;
-            white-space: nowrap;
-        }
         
         /* ========================================
            HERO SECTION
@@ -488,25 +466,49 @@
             color: var(--text-muted);
         }
         
+
         .featured-image {
             background: linear-gradient(135deg, #1a1a2e 0%, #0f0f1a 100%);
             border-radius: var(--radius-lg);
-            padding: 2rem;
+            padding: 1.5rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 300px;
+            min-height: 450px;
+            max-height: 550px;
             border: 1px solid var(--border-color);
+            overflow: hidden;
         }
-        
+                
         .featured-image-placeholder {
             text-align: center;
             color: var(--text-muted);
+            width: 100%;
+            max-width: 100%;
         }
-        
+
+        .featured-image-placeholder img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            max-height: 400px;
+            object-fit: contain;
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(0, 212, 170, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            transition: var(--transition-normal);
+            display: block;
+            margin: 0 auto;
+        }
+
+        .featured-image-placeholder img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 48px rgba(0, 212, 170, 0.2);
+        }
+
         .featured-image-placeholder i {
-            width: 64px;
-            height: 64px;
+            width: 100px;
+            height: 100px;
             color: var(--accent);
             opacity: 0.5;
             margin-bottom: 1rem;
@@ -793,11 +795,50 @@
             
             .featured-image {
                 order: -1;
+                min-height: 400px;
+                padding: 1.5rem;
+            }
+            
+            .featured-image-placeholder img {
+                max-width: 100%;
+                height: auto;
             }
             
             .nav-link {
                 padding: 0.5rem 0.4rem;
                 font-size: 0.75rem;
+            }
+        }
+
+        /* Medium screens - optimize dashboard visibility */
+        @media (min-width: 768px) and (max-width: 1100px) {
+            .featured-image {
+                min-height: 350px;
+                max-height: 400px;
+            }
+            
+            .featured-image-placeholder {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .featured-image-placeholder img {
+                object-fit: contain;
+                max-width: 450px;
+                max-height: 320px;
+            }
+        }
+        @media (max-width: 768px) {
+            .featured-image {
+                min-height: 200px;
+                max-height: 350px;
+                padding: 1rem;
+            }
+            
+            .featured-image-placeholder img {
+                max-width: 100%;
+                max-height: 280px;
             }
         }
         
@@ -868,7 +909,7 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="logo">VINAY</a>
+            <a href="../index.html" class="logo">VINAY</a>
             
             <button class="nav-toggle" aria-label="Toggle navigation">
                 <span></span>
@@ -877,14 +918,12 @@
             </button>
             
             <ul class="nav-links">
-                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="pages/experience.html" class="nav-link">Experience</a></li>
-                <li><a href="pages/education.html" class="nav-link">Education</a></li>
                 <li><a href="pages/projects.html" class="nav-link">Projects</a></li>
                 <li><a href="pages/dashboards.html" class="nav-link">Dashboards</a></li>
-                <li><a href="pages/publications.html" class="nav-link">Publications</a></li>
                 <li><a href="pages/skills.html" class="nav-link">Skills</a></li>
-                <li><a href="pages/certifications.html" class="nav-link">Certifications</a></li>
+                <li><a href="pages/certifications.html" class="nav-link active">Certifications</a></li>
                 <li><a href="pages/contact.html" class="nav-link">Contact</a></li>
             </ul>
         </div>
@@ -1132,10 +1171,7 @@
                 
                 <div class="featured-image">
                     <div class="featured-image-placeholder">
-                        <i data-lucide="bar-chart-3"></i>
-                        <p>Project Visualization</p>
-                        <!-- Replace with actual project screenshot: -->
-                        <!-- <img src="assets/images/waze-project.png" alt="Waze Churn Prediction"> -->
+                        <img src="assets/Dashboards/Waze_user_churn_home.png" alt="Waze Churn Prediction">
                     </div>
                 </div>
             </div>

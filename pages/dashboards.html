@@ -12,6 +12,23 @@
     <link rel="stylesheet" href="../css/styles.css">
     
     <style>
+        /* .navbar {
+            padding: 0.75rem 2rem;
+        }
+        
+        .nav-container {
+            gap: 2rem;
+        }
+        
+        .nav-links {
+            gap: 0.15rem;
+        }
+        
+        .nav-link {
+            padding: 0.5rem 0.6rem;
+            font-size: 0.82rem;
+            white-space: nowrap;
+        } */
         .dashboard-card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
@@ -182,17 +199,20 @@
     <nav class="navbar">
         <div class="nav-container">
             <a href="../index.html" class="logo">VINAY</a>
+            
             <button class="nav-toggle" aria-label="Toggle navigation">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
+            
             <ul class="nav-links">
                 <li><a href="../index.html" class="nav-link">Home</a></li>
                 <li><a href="experience.html" class="nav-link">Experience</a></li>
                 <li><a href="projects.html" class="nav-link">Projects</a></li>
-                <li><a href="dashboards.html" class="nav-link active">Dashboards</a></li>
+                <li><a href="dashboards.html" class="nav-link">Dashboards</a></li>
                 <li><a href="skills.html" class="nav-link">Skills</a></li>
+                <li><a href="certifications.html" class="nav-link active">Certifications</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
         </div>
@@ -219,7 +239,7 @@
                 
                 <!-- Dashboard 1: Sales Performance -->
                 <div class="dashboard-card fade-in">
-                    <div class="dashboard-preview" style="background: linear-gradient(135deg, #1e3a5f 0%, #0d1b2a 100%);" onclick="openDashboardModal('../assets/images/sales-dashboard.png', 'Sales Performance Dashboard')">
+                    <div class="dashboard-preview" style="background: linear-gradient(135deg, #1e3a5f 0%, #0d1b2a 100%);" onclick="openDashboardModal('../assets/Dashboards/Sales Performance.png', 'Sales Performance Dashboard')">
                         <!-- TODO: Replace with your actual screenshot -->
                         <img src="../assets/Dashboards/Sales Performance.png" alt="Sales Performance Dashboard">
                         <!-- <div class="dashboard-placeholder"> -->

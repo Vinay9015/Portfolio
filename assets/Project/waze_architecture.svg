@@ -1,0 +1,307 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0e27"/>
+      <stop offset="50%" stop-color="#0f1538"/>
+      <stop offset="100%" stop-color="#0a0e27"/>
+    </linearGradient>
+    <linearGradient id="sourceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6c5ce7"/>
+      <stop offset="100%" stop-color="#a29bfe"/>
+    </linearGradient>
+    <linearGradient id="extractGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5f27cd"/>
+      <stop offset="100%" stop-color="#7c5ce7"/>
+    </linearGradient>
+    <linearGradient id="processGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a5f"/>
+      <stop offset="100%" stop-color="#2d5a87"/>
+    </linearGradient>
+    <linearGradient id="modelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00997a"/>
+      <stop offset="100%" stop-color="#00c9a7"/>
+    </linearGradient>
+    <linearGradient id="analyticsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e6a817"/>
+      <stop offset="100%" stop-color="#f0c040"/>
+    </linearGradient>
+    <linearGradient id="arrowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a29bfe" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#00c9a7" stop-opacity="0.8"/>
+    </linearGradient>
+    <linearGradient id="arrowGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00c9a7" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#f0c040" stop-opacity="0.8"/>
+    </linearGradient>
+    
+    <!-- Glow filters -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softShadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+    <filter id="cardShadow">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+
+    <!-- Arrow marker -->
+    <marker id="arrowHead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#a29bfe" opacity="0.7"/>
+    </marker>
+    <marker id="arrowHeadTeal" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#00c9a7" opacity="0.7"/>
+    </marker>
+    <marker id="arrowHeadGold" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f0c040" opacity="0.7"/>
+    </marker>
+
+    <!-- Grid pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-width="0.3" opacity="0.03"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="900" fill="url(#bgGrad)"/>
+  <rect width="1400" height="900" fill="url(#grid)"/>
+  
+  <!-- Subtle decorative circles -->
+  <circle cx="100" cy="400" r="200" fill="#6c5ce7" opacity="0.03"/>
+  <circle cx="1300" cy="350" r="250" fill="#f0c040" opacity="0.03"/>
+  <circle cx="700" cy="450" r="300" fill="#00c9a7" opacity="0.02"/>
+
+  <!-- ========== HEADER ========== -->
+  <text x="700" y="52" text-anchor="middle" font-size="28" font-weight="700" fill="#ffffff" letter-spacing="1">Waze Churn Prediction</text>
+  <text x="700" y="76" text-anchor="middle" font-size="13" fill="#a29bfe" letter-spacing="3" font-weight="400">DATA FLOW &amp; ML ARCHITECTURE</text>
+  <line x1="580" y1="88" x2="820" y2="88" stroke="#a29bfe" stroke-width="1" opacity="0.3"/>
+
+  <!-- ========== COLUMN HEADERS ========== -->
+  <g opacity="0.5">
+    <text x="120" y="128" text-anchor="middle" font-size="10" fill="#a29bfe" letter-spacing="3" font-weight="600">SOURCES</text>
+    <text x="330" y="128" text-anchor="middle" font-size="10" fill="#7c5ce7" letter-spacing="3" font-weight="600">EXTRACT</text>
+    <text x="580" y="128" text-anchor="middle" font-size="10" fill="#5a8ab5" letter-spacing="3" font-weight="600">PROCESS</text>
+    <text x="850" y="128" text-anchor="middle" font-size="10" fill="#00c9a7" letter-spacing="3" font-weight="600">MODEL</text>
+    <text x="1140" y="128" text-anchor="middle" font-size="10" fill="#f0c040" letter-spacing="3" font-weight="600">ANALYTICS</text>
+  </g>
+  <!-- Column dividers -->
+  <line x1="220" y1="115" x2="220" y2="660" stroke="#ffffff" stroke-width="0.5" opacity="0.04" stroke-dasharray="4,8"/>
+  <line x1="440" y1="115" x2="440" y2="660" stroke="#ffffff" stroke-width="0.5" opacity="0.04" stroke-dasharray="4,8"/>
+  <line x1="720" y1="115" x2="720" y2="660" stroke="#ffffff" stroke-width="0.5" opacity="0.04" stroke-dasharray="4,8"/>
+  <line x1="990" y1="115" x2="990" y2="660" stroke="#ffffff" stroke-width="0.5" opacity="0.04" stroke-dasharray="4,8"/>
+
+  <!-- ========== SOURCES COLUMN ========== -->
+  <!-- Waze App (main source) -->
+  <g filter="url(#cardShadow)">
+    <rect x="42" y="230" width="156" height="70" rx="10" fill="url(#sourceGrad)"/>
+    <text x="120" y="260" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">Waze App</text>
+    <text x="120" y="280" text-anchor="middle" font-size="10" fill="#ddd" opacity="0.8">User Data</text>
+  </g>
+
+  <!-- Sub-sources -->
+  <g filter="url(#softShadow)">
+    <rect x="42" y="330" width="156" height="44" rx="6" fill="#1a1e3e" stroke="#6c5ce7" stroke-width="0.8"/>
+    <text x="120" y="349" text-anchor="middle" font-size="11" font-weight="600" fill="#c8c3f7">User Behavior</text>
+    <text x="120" y="364" text-anchor="middle" font-size="9" fill="#8888aa">Sessions, Drives</text>
+  </g>
+  <g filter="url(#softShadow)">
+    <rect x="42" y="390" width="156" height="44" rx="6" fill="#1a1e3e" stroke="#6c5ce7" stroke-width="0.8"/>
+    <text x="120" y="409" text-anchor="middle" font-size="11" font-weight="600" fill="#c8c3f7">Device Info</text>
+    <text x="120" y="424" text-anchor="middle" font-size="9" fill="#8888aa">iPhone / Android</text>
+  </g>
+  <g filter="url(#softShadow)">
+    <rect x="42" y="450" width="156" height="44" rx="6" fill="#1a1e3e" stroke="#6c5ce7" stroke-width="0.8"/>
+    <text x="120" y="469" text-anchor="middle" font-size="11" font-weight="600" fill="#c8c3f7">Activity Logs</text>
+    <text x="120" y="484" text-anchor="middle" font-size="9" fill="#8888aa">Daily Usage</text>
+  </g>
+
+  <!-- ========== EXTRACT COLUMN ========== -->
+  <g filter="url(#cardShadow)">
+    <rect x="265" y="320" width="130" height="80" rx="10" fill="url(#extractGrad)"/>
+    <text x="330" y="354" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">Python</text>
+    <text x="330" y="374" text-anchor="middle" font-size="10" fill="#ddd" opacity="0.8">Pandas, NumPy</text>
+  </g>
+  <g filter="url(#softShadow)">
+    <rect x="265" y="430" width="130" height="38" rx="6" fill="#1a1e3e" stroke="#7c5ce7" stroke-width="0.8"/>
+    <text x="330" y="449" text-anchor="middle" font-size="10" font-weight="500" fill="#b8b3e7">Data Sources</text>
+    <text x="330" y="461" text-anchor="middle" font-size="9" fill="#8888aa">API / CSV</text>
+  </g>
+
+  <!-- ========== PROCESS COLUMN ========== -->
+  <!-- EDA & Cleaning -->
+  <g filter="url(#cardShadow)">
+    <rect x="480" y="220" width="200" height="55" rx="8" fill="url(#processGrad)"/>
+    <text x="580" y="245" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">EDA &amp; Cleaning</text>
+    <text x="580" y="262" text-anchor="middle" font-size="9" fill="#a0c4e0">Missing Values Treatment</text>
+  </g>
+  <!-- Feature Engineering -->
+  <g filter="url(#cardShadow)">
+    <rect x="480" y="370" width="200" height="55" rx="8" fill="url(#processGrad)"/>
+    <text x="580" y="395" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">Feature Engineering</text>
+    <text x="580" y="412" text-anchor="middle" font-size="9" fill="#a0c4e0">Derived Features</text>
+  </g>
+  <!-- Feature pills -->
+  <g>
+    <rect x="490" y="445" width="130" height="26" rx="13" fill="#162035" stroke="#2d5a87" stroke-width="0.8"/>
+    <text x="555" y="462" text-anchor="middle" font-size="9" fill="#7eb3d8" font-family="'Courier New', monospace">km_per_driving_day</text>
+  </g>
+  <g>
+    <rect x="490" y="480" width="130" height="26" rx="13" fill="#162035" stroke="#2d5a87" stroke-width="0.8"/>
+    <text x="555" y="497" text-anchor="middle" font-size="9" fill="#7eb3d8" font-family="'Courier New', monospace">drives_per_day</text>
+  </g>
+
+  <!-- ========== MODEL COLUMN ========== -->
+  <!-- Logistic Regression -->
+  <g filter="url(#cardShadow)">
+    <rect x="760" y="195" width="180" height="55" rx="8" fill="url(#modelGrad)"/>
+    <text x="850" y="220" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">Logistic Regression</text>
+    <text x="850" y="238" text-anchor="middle" font-size="9" fill="#b0ead8">Baseline Model</text>
+  </g>
+  <!-- Random Forest -->
+  <g filter="url(#cardShadow)">
+    <rect x="760" y="340" width="180" height="55" rx="8" fill="url(#modelGrad)"/>
+    <text x="850" y="365" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">Random Forest</text>
+    <text x="850" y="383" text-anchor="middle" font-size="9" fill="#b0ead8">Ensemble Model</text>
+  </g>
+  <!-- XGBoost -->
+  <g filter="url(#cardShadow)">
+    <rect x="760" y="485" width="180" height="55" rx="8" fill="url(#modelGrad)"/>
+    <text x="850" y="510" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">XGBoost</text>
+    <text x="850" y="528" text-anchor="middle" font-size="9" fill="#b0ead8">Gradient Boosting</text>
+  </g>
+
+  <!-- ========== ANALYTICS COLUMN ========== -->
+  <!-- Tableau -->
+  <g filter="url(#cardShadow)">
+    <rect x="1040" y="195" width="200" height="60" rx="8" fill="url(#analyticsGrad)"/>
+    <text x="1140" y="222" text-anchor="middle" font-size="15" font-weight="700" fill="#1a1200">Tableau</text>
+    <text x="1140" y="241" text-anchor="middle" font-size="10" fill="#3d2f00" opacity="0.7">Interactive Dashboard</text>
+  </g>
+  <!-- Matplotlib -->
+  <g filter="url(#softShadow)">
+    <rect x="1040" y="290" width="200" height="44" rx="6" fill="#1a1e3e" stroke="#f0c040" stroke-width="0.8"/>
+    <text x="1140" y="310" text-anchor="middle" font-size="11" font-weight="600" fill="#f0d070">Matplotlib</text>
+    <text x="1140" y="325" text-anchor="middle" font-size="9" fill="#8888aa">Static Plots</text>
+  </g>
+  <!-- Seaborn -->
+  <g filter="url(#softShadow)">
+    <rect x="1040" y="350" width="200" height="44" rx="6" fill="#1a1e3e" stroke="#f0c040" stroke-width="0.8"/>
+    <text x="1140" y="370" text-anchor="middle" font-size="11" font-weight="600" fill="#f0d070">Seaborn</text>
+    <text x="1140" y="385" text-anchor="middle" font-size="9" fill="#8888aa">Statistical Visualization</text>
+  </g>
+  <!-- Reporting -->
+  <g filter="url(#softShadow)">
+    <rect x="1040" y="410" width="200" height="44" rx="6" fill="#1a1e3e" stroke="#f0c040" stroke-width="0.8"/>
+    <text x="1140" y="430" text-anchor="middle" font-size="11" font-weight="600" fill="#f0d070">Visualization</text>
+    <text x="1140" y="445" text-anchor="middle" font-size="9" fill="#8888aa">&amp; Reporting</text>
+  </g>
+
+  <!-- ========== FLOW ARROWS ========== -->
+  <!-- 1: Sources → Extract -->
+  <line x1="198" y1="265" x2="260" y2="345" stroke="#a29bfe" stroke-width="2" opacity="0.5" marker-end="url(#arrowHead)"/>
+  <line x1="198" y1="352" x2="260" y2="352" stroke="#a29bfe" stroke-width="1.5" opacity="0.3" marker-end="url(#arrowHead)"/>
+  <line x1="198" y1="412" x2="260" y2="370" stroke="#a29bfe" stroke-width="1.5" opacity="0.3" marker-end="url(#arrowHead)"/>
+  <line x1="198" y1="472" x2="260" y2="385" stroke="#a29bfe" stroke-width="1.5" opacity="0.3" marker-end="url(#arrowHead)"/>
+
+  <!-- 2: Extract → Process (EDA) -->
+  <line x1="395" y1="340" x2="475" y2="248" stroke="#a29bfe" stroke-width="2" opacity="0.5" marker-end="url(#arrowHead)"/>
+  <!-- 3: Extract → Process (Feature Eng) -->
+  <line x1="395" y1="375" x2="475" y2="397" stroke="#a29bfe" stroke-width="2" opacity="0.5" marker-end="url(#arrowHead)"/>
+
+  <!-- 4: Process → Models -->
+  <line x1="680" y1="248" x2="755" y2="222" stroke="#00c9a7" stroke-width="2" opacity="0.5" marker-end="url(#arrowHeadTeal)"/>
+  <line x1="680" y1="397" x2="755" y2="367" stroke="#00c9a7" stroke-width="2" opacity="0.5" marker-end="url(#arrowHeadTeal)"/>
+  <line x1="680" y1="397" x2="755" y2="512" stroke="#00c9a7" stroke-width="2" opacity="0.5" marker-end="url(#arrowHeadTeal)"/>
+
+  <!-- 5: Models → Analytics -->
+  <line x1="940" y1="222" x2="1035" y2="225" stroke="#f0c040" stroke-width="2" opacity="0.5" marker-end="url(#arrowHeadGold)"/>
+  <line x1="940" y1="367" x2="1035" y2="312" stroke="#f0c040" stroke-width="1.5" opacity="0.35" marker-end="url(#arrowHeadGold)"/>
+  <line x1="940" y1="367" x2="1035" y2="372" stroke="#f0c040" stroke-width="1.5" opacity="0.35" marker-end="url(#arrowHeadGold)"/>
+  <line x1="940" y1="512" x2="1035" y2="432" stroke="#f0c040" stroke-width="1.5" opacity="0.35" marker-end="url(#arrowHeadGold)"/>
+
+  <!-- ========== STEP BADGES ========== -->
+  <g filter="url(#glow)">
+    <circle cx="230" cy="300" r="14" fill="#6c5ce7"/>
+    <text x="230" y="305" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">1</text>
+  </g>
+  <g filter="url(#glow)">
+    <circle cx="438" cy="285" r="14" fill="#6c5ce7"/>
+    <text x="438" y="290" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">2</text>
+  </g>
+  <g filter="url(#glow)">
+    <circle cx="438" cy="420" r="14" fill="#6c5ce7"/>
+    <text x="438" y="425" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">3</text>
+  </g>
+  <g filter="url(#glow)">
+    <circle cx="725" cy="310" r="14" fill="#00997a"/>
+    <text x="725" y="315" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">4</text>
+  </g>
+  <g filter="url(#glow)">
+    <circle cx="998" cy="285" r="14" fill="#d4960e"/>
+    <text x="998" y="290" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">5</text>
+  </g>
+
+  <!-- ========== TECH STACK BAR ========== -->
+  <text x="70" y="610" font-size="10" fill="#8888aa" letter-spacing="2" font-weight="600">TECH STACK</text>
+  <g transform="translate(70, 622)">
+    <rect x="0" y="0" width="70" height="26" rx="4" fill="#162035" stroke="#6c5ce7" stroke-width="1"/>
+    <text x="35" y="17" text-anchor="middle" font-size="10" fill="#a29bfe">Python</text>
+
+    <rect x="82" y="0" width="70" height="26" rx="4" fill="#162035" stroke="#e6a817" stroke-width="1"/>
+    <text x="117" y="17" text-anchor="middle" font-size="10" fill="#f0c040">Pandas</text>
+
+    <rect x="164" y="0" width="70" height="26" rx="4" fill="#162035" stroke="#e6a817" stroke-width="1"/>
+    <text x="199" y="17" text-anchor="middle" font-size="10" fill="#f0c040">NumPy</text>
+
+    <rect x="246" y="0" width="80" height="26" rx="4" fill="#162035" stroke="#6c5ce7" stroke-width="1"/>
+    <text x="286" y="17" text-anchor="middle" font-size="10" fill="#a29bfe">Scikit-learn</text>
+
+    <rect x="338" y="0" width="70" height="26" rx="4" fill="#162035" stroke="#00997a" stroke-width="1"/>
+    <text x="373" y="17" text-anchor="middle" font-size="10" fill="#00c9a7">XGBoost</text>
+
+    <rect x="420" y="0" width="70" height="26" rx="4" fill="#162035" stroke="#e6a817" stroke-width="1"/>
+    <text x="455" y="17" text-anchor="middle" font-size="10" fill="#f0c040">Tableau</text>
+
+    <rect x="502" y="0" width="76" height="26" rx="4" fill="#162035" stroke="#2d5a87" stroke-width="1"/>
+    <text x="540" y="17" text-anchor="middle" font-size="10" fill="#7eb3d8">Matplotlib</text>
+
+    <rect x="590" y="0" width="70" height="26" rx="4" fill="#162035" stroke="#2d5a87" stroke-width="1"/>
+    <text x="625" y="17" text-anchor="middle" font-size="10" fill="#7eb3d8">Seaborn</text>
+  </g>
+
+  <!-- ========== KEY FEATURES ========== -->
+  <text x="70" y="688" font-size="10" fill="#8888aa" letter-spacing="2" font-weight="600">KEY FEATURES</text>
+  <g transform="translate(70, 700)">
+    <rect x="0" y="0" width="4" height="18" rx="2" fill="#6c5ce7"/>
+    <text x="12" y="13" font-size="10" fill="#cccccc">ETL Pipeline</text>
+
+    <rect x="120" y="0" width="4" height="18" rx="2" fill="#7c5ce7"/>
+    <text x="132" y="13" font-size="10" fill="#cccccc">Hypothesis Testing</text>
+
+    <rect x="280" y="0" width="4" height="18" rx="2" fill="#2d5a87"/>
+    <text x="292" y="13" font-size="10" fill="#cccccc">ML Modeling</text>
+
+    <rect x="400" y="0" width="4" height="18" rx="2" fill="#00c9a7"/>
+    <text x="412" y="13" font-size="10" fill="#cccccc">Churn Detection</text>
+
+    <rect x="540" y="0" width="4" height="18" rx="2" fill="#00c9a7"/>
+    <text x="552" y="13" font-size="10" fill="#cccccc">Predictive Analytics</text>
+
+    <rect x="710" y="0" width="4" height="18" rx="2" fill="#f0c040"/>
+    <text x="722" y="13" font-size="10" fill="#cccccc">Interactive Dashboards</text>
+  </g>
+
+  <!-- ========== LEGEND ========== -->
+  <g transform="translate(70, 555)">
+    <text x="0" y="0" font-size="10" fill="#8888aa" letter-spacing="2" font-weight="600">LEGEND</text>
+    <line x1="0" y1="14" x2="30" y2="14" stroke="#a29bfe" stroke-width="2" marker-end="url(#arrowHead)"/>
+    <text x="40" y="18" font-size="9" fill="#888">Data Movement</text>
+    <line x1="160" y1="14" x2="190" y2="14" stroke="#888" stroke-width="1" stroke-dasharray="4,3"/>
+    <text x="200" y="18" font-size="9" fill="#888">Read Access</text>
+  </g>
+</svg>
