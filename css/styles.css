@@ -965,8 +965,8 @@ p {
         right: 0;
         background: var(--bg-primary);
         flex-direction: column;
-        padding: var(--spacing-lg);
-        gap: var(--spacing-sm);
+        padding: var(--spacing-lg) var(--spacing-xl);
+        gap: 0;
         border-bottom: 1px solid var(--border-color);
         transform: translateY(-100%);
         opacity: 0;
@@ -980,9 +980,22 @@ p {
         visibility: visible;
     }
     
+    .nav-links li {
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    .nav-links li:last-child {
+        border-bottom: none;
+    }
+    
     .nav-link {
-        padding: var(--spacing-sm) 0;
+        display: block;
+        padding: 0.875rem var(--spacing-sm);
         font-size: 1rem;
+        min-height: 48px;
+        line-height: 48px;
+        padding-top: 0;
+        padding-bottom: 0;
     }
     
     .grid-2,
